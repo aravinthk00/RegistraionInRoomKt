@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="8dp"
+    android:layout_margin="6dp"
+    android:padding="2dp"
+    android:backgroundTint="@color/Azure"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/userImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="6dp"
+            android:scaleType="centerCrop"
+            android:padding="0.5dp"
+            app:strokeColor="@color/Gray"
+            app:strokeWidth="1dp"
+            style="@style/roundedCornersImageView"
+            android:background="@drawable/list_image_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/contentTextContainer"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toEndOf="@id/userImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/userIdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Id :"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/DarkSlateGray"
+            />
+
+        <TextView
+            android:id="@+id/userNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name :"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/DarkSlateGray"
+            />
+
+        <TextView
+            android:id="@+id/userEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email :"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/DarkSlateGray"
+         />
+
+        <TextView
+            android:id="@+id/userPhoneText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone :"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/DarkSlateGray"/>
+
+        <TextView
+            android:id="@+id/userGenderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender :"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/DarkSlateGray"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contentDataContainer"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/contentTextContainer"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/userId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 1"
+                android:textSize="@dimen/text_size_16"
+                android:lines="1"
+                android:textColor="@color/Navy"
+                />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="user name"
+                android:textSize="@dimen/text_size_16"
+                android:lines="1"
+                android:textColor="@color/Navy"
+                />
+
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email :"
+                android:lines="1"
+                android:textColor="@color/Navy"
+                android:textSize="@dimen/text_size_16"
+                />
+
+            <TextView
+                android:id="@+id/userPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12344567890"
+                android:lines="1"
+                android:textColor="@color/Navy"
+                android:textSize="@dimen/text_size_14"
+                app:layout_constraintStart_toEndOf="@id/userImageView"
+                app:layout_constraintTop_toBottomOf="@id/userEmailText"/>
+
+            <TextView
+                android:id="@+id/userGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/baseline_hide_source_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/Navy"
+                android:lines="1"
+                android:textColor="@color/Navy"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="8dp"
+            android:paddingVertical="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/user_update_button"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/update"
+                android:backgroundTint="@color/MediumAquamarine"
+                android:background="@drawable/list_item_button_background"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/user_delete_button"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/delete"
+                android:backgroundTint="@color/Salmon"
+                android:background="@drawable/list_item_button_background"/>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

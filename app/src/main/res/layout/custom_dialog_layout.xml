@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:layout_margin="20dp">
+
+
+    <TextView
+        android:id="@+id/registerTopText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/SteelBlue"
+        android:text="@string/dialog_update_top_text"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userDialogNameEditLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerTopText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userDialogNameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_person_add_24"
+            android:drawablePadding="10dp"
+            android:hint="@string/user_name_placeholder_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userDialogPhoneEditLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userDialogNameEditLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userDialogPhoneEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_phone_24"
+            android:drawablePadding="10dp"
+            android:hint="@string/userdialog_phone_no_placeholder_text"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userDialogEmailEditLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userDialogPhoneEditLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userDialogEmailEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_email_24"
+            android:drawablePadding="10dp"
+            android:hint="@string/userdialog_email_placeholder_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/genderText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/gender_text"
+        app:layout_constraintStart_toStartOf="@id/userDialogEmailEditLayout"
+        app:layout_constraintTop_toBottomOf="@id/userDialogEmailEditLayout"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <RadioGroup
+        android:id="@+id/dialog_gender_options"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/option_other"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/genderText"
+        app:layout_constraintTop_toBottomOf="@id/genderText">
+
+        <RadioButton
+            android:id="@+id/option_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male_str" />
+
+        <RadioButton
+            android:id="@+id/option_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female_str" />
+
+        <RadioButton
+            android:id="@+id/option_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female_str"
+            android:visibility="gone" />
+
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userDialogIdEditLayout"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_gender_options"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/userDialogIdEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_perm_identity_24"
+            android:drawablePadding="10dp"
+            android:textSize="22sp"
+            android:hint="@string/userdialog_id_placeholder_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/userDialogUpdateButton"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="20dp"
+        android:background="@color/SteelBlue"
+        android:text="@string/dialog_update_button_text"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_gender_options" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

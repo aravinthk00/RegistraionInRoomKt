@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/PowderBlue"
+    tools:context=".View.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/register_form_background"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/registerTopText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registration Form"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:background="@drawable/registerform_top_text_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/userNameEditLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="4dp"
+            android:background="@drawable/register_form_editlayout_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registerTopText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userNameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Name"
+                android:drawableEnd="@drawable/baseline_person_add_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/SteelBlue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/userPhoneEditLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/register_form_editlayout_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userNameEditLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userPhoneEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Phone.No"
+                android:inputType="number"
+                android:drawableTint="@color/SteelBlue"
+                android:drawableEnd="@drawable/baseline_phone_24"
+                android:drawablePadding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/userEmailEditLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/register_form_editlayout_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userPhoneEditLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userEmailEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Email"
+                android:drawableTint="@color/SteelBlue"
+                android:drawableEnd="@drawable/baseline_email_24"
+                android:drawablePadding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/genderText"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.5"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_text"
+            android:textSize="@dimen/text_size_14"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="@id/userEmailEditLayout"
+            app:layout_constraintTop_toBottomOf="@id/userEmailEditLayout"
+            />
+
+        <RadioGroup
+            android:id="@+id/gender_options"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/option_other"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/genderText"
+            app:layout_constraintTop_toBottomOf="@id/genderText">
+
+            <RadioButton
+                android:id="@+id/option_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male_str"
+                android:textSize="@dimen/text_size_14"/>
+
+            <RadioButton
+                android:id="@+id/option_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female_str"
+                android:textSize="@dimen/text_size_14"/>
+
+            <RadioButton
+                android:id="@+id/option_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female_str"
+                android:visibility="gone"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/chooseFileText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_file"
+            android:textSize="@dimen/text_size_14"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toEndOf="@id/genderText"
+            app:layout_constraintTop_toBottomOf="@id/userEmailEditLayout"
+            />
+
+        <TextView
+            android:id="@+id/selectImageButton"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/select_the_file"
+            android:textColor="@color/Snow"
+            android:textSize="@dimen/text_size_14"
+            android:gravity="center"
+            android:drawableTint="@color/Snow"
+            android:background="@drawable/file_picker_back"
+            android:drawableEnd="@drawable/baseline_image_24"
+            android:drawablePadding="10dp"
+            app:layout_constraintStart_toStartOf="@id/chooseFileText"
+            app:layout_constraintTop_toBottomOf="@id/chooseFileText"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submitButton"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/submit_button_background"
+            android:text="@string/submit_text"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            android:textColor="@color/Snow"
+            app:layout_constraintCircleRadius="10dp"
+            app:layout_constraintStart_toEndOf="@id/gender_options"
+            app:layout_constraintTop_toBottomOf="@id/selectImageButton"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/LightSteelBlue"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/submitButton"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/userDataViewText"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:text="@string/view_existing_data"
+            android:textColor="@color/SlateGray"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:background="@drawable/view_data_button_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/submitButton"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

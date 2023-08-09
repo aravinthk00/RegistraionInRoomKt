@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">RegisterInRoomKotlin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="male_str">Male</string>
+    <string name="female_str">Female</string>
+    <string name="gender_text">Gender</string>
+    <string name="choose_file">Choose Image</string>
+    <string name="submit_text">Submit</string>
+    <string name="select_the_file">File</string>
+    <string name="registration_form">Registration Form</string>
+    <string name="view_existing_data">View Existing Data</string>
+    <string name="action_new_user">New User</string>
+    <string name="action_delete_all">Delete All</string>
+    <string name="user_menu_title">Users List</string>
+    <string name="registration_form_top_text">Registration Form</string>
+    <string name="dialog_update_top_text">Update User Info</string>
+    <string name="user_name_placeholder_text">User Name</string>
+    <string name="userdialog_phone_no_placeholder_text">User Phone.No</string>
+    <string name="userdialog_email_placeholder_text">User Email</string>
+    <string name="userdialog_id_placeholder_text">User ID</string>
+    <string name="dialog_update_button_text">Update</string>
+    <string name="add_new_user">Add New User</string>
+    <string name="users_data_not_found">Users Data Not Found!</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="my_app">APP</string>
+</resources>

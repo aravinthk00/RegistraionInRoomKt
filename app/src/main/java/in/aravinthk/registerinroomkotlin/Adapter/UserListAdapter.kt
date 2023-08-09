@@ -9,13 +9,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestListener
 import com.google.android.material.imageview.ShapeableImageView
 import `in`.aravinthk.registerinroomkotlin.DataBase.Entity.UserEntity
 import `in`.aravinthk.registerinroomkotlin.Listener.ItemListener
 import `in`.aravinthk.registerinroomkotlin.R
-import java.lang.NullPointerException
 
 class UserListAdapter (
     val userDataList: List<UserEntity>,
@@ -58,13 +55,19 @@ class UserListAdapter (
             holder.user_gender.text = userDataList[position].gender.toString()
             holder.user_gender.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.baseline_hide_source_24,0,0,0)
         }
+        holder.user_iamge.setShapeAppearanceModel(
+            holder.user_iamge.getShapeAppearanceModel()
+                .toBuilder()
+                .setAllCornerSizes(30F)
+                .build()
+        )
 
         if(userDataList[position].user_image != null) {
             try {
                 val imageUri = Uri.parse(userDataList[position].user_image)
                 Log.d("adapter", "onBindViewHolder: " + imageUri)
                 holder.user_iamge.setImageURI(imageUri)
-                holder.user_iamge.shapeAppearanceModel.withCornerSize(5f).toBuilder()
+
 //                Glide.with(context)
 //                    .load(imageUri) // Uri of the picture
 //                    //.transform(new CircleTransform(..))

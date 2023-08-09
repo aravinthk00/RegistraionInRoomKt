@@ -123,48 +123,54 @@ class MainActivity : AppCompatActivity() {
 
     //CREATE (INSERT)
     private fun insertData() {
-        if (mainBinding.userNameEdit.text.toString().isEmpty()) {
-            mainBinding.userNameEdit.setError("Ender valid detail")
-            return
-        }
-        if (mainBinding.userEmailEdit.text.toString().isEmpty()) {
-            mainBinding.userEmailEdit.setError("Ender valid detail")
-            return
-        }
-        if (mainBinding.userPhoneEdit.text.toString().isEmpty()) {
-            mainBinding.userPhoneEdit.setError("Ender valid detail")
-            return
-        }
-        val name = mainBinding.userNameEdit.text.toString()
-        val email = mainBinding.userEmailEdit.text.toString()
-        val phone: Int = Integer.parseInt(mainBinding.userPhoneEdit.text.toString())
-        val selectedGender = mainBinding.genderOptions.checkedRadioButtonId
-        val gender = when (selectedGender) {
-            R.id.option_male -> "Male"
-            R.id.option_female -> "Female"
-            else -> "Other"
-        }
-
-        val image = selectedImagePath
-        Log.d("TAG", "selectedImagePath: " + image)
-        val user = UserEntity(
-            user_id = null,
-            user_name = name,
-            phone_no = phone,
-            user_image = image,
-            user_email = email,
-            gender = gender
-        ) //why id null? because id is auto generate
-        CoroutineScope(Dispatchers.Main).launch {
-            viewModel.insertUser(user).also {
-                //do action here
-                Log.d("TAG", "insertData: ")
-                Toast.makeText(
-                    applicationContext,
-                    "$name Added Successfully!..",
-                    Toast.LENGTH_SHORT
-                ).show()
+        try {
+            if (mainBinding.userNameEdit.text.toString().isEmpty()) {
+                mainBinding.userNameEdit.setError("Ender valid detail")
+                return
             }
+            if (mainBinding.userEmailEdit.text.toString().isEmpty()) {
+                mainBinding.userEmailEdit.setError("Ender valid detail")
+                return
+            }
+            if (mainBinding.userPhoneEdit.text.toString().isEmpty()) {
+                mainBinding.userPhoneEdit.setError("Ender valid detail")
+                return
+            }
+            val name = mainBinding.userNameEdit.text.toString()
+            val email = mainBinding.userEmailEdit.text.toString()
+
+            val phone: Int = Integer.parseInt(mainBinding.userPhoneEdit.text.toString())
+
+            val selectedGender = mainBinding.genderOptions.checkedRadioButtonId
+            val gender = when (selectedGender) {
+                R.id.option_male -> "Male"
+                R.id.option_female -> "Female"
+                else -> "Other"
+            }
+
+            val image = selectedImagePath
+            Log.d("TAG", "selectedImagePath: " + image)
+            val user = UserEntity(
+                user_id = null,
+                user_name = name,
+                phone_no = phone,
+                user_image = image,
+                user_email = email,
+                gender = gender
+            ) //why id null? because id is auto generate
+            CoroutineScope(Dispatchers.Main).launch {
+                viewModel.insertUser(user).also {
+                    //do action here
+                    Log.d("TAG", "insertData: ")
+                    Toast.makeText(
+                        applicationContext,
+                        "$name Added Successfully!..",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        } catch (e: NumberFormatException) {
+
         }
     }
 

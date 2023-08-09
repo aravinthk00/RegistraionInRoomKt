@@ -9,13 +9,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintWidth_percent="0.9"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/register_form_background"
-        android:padding="8dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:padding="4dp"
+            android:padding="8dp"
             android:background="@drawable/register_form_editlayout_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/registerTopText">
@@ -60,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:padding="8dp"
             android:background="@drawable/register_form_editlayout_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/userNameEditLayout">
@@ -83,6 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:padding="8dp"
             android:background="@drawable/register_form_editlayout_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/userPhoneEditLayout">
@@ -119,6 +121,7 @@
             android:layout_height="wrap_content"
             android:checkedButton="@id/option_other"
             android:orientation="vertical"
+            android:layout_marginBottom="2dp"
             app:layout_constraintStart_toStartOf="@id/genderText"
             app:layout_constraintTop_toBottomOf="@id/genderText">
 
@@ -174,7 +177,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/submitButton"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_margin="10dp"
             android:background="@drawable/submit_button_background"
@@ -188,25 +191,30 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <View
+            android:id="@+id/horizView"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/LightSteelBlue"
             android:layout_margin="5dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/submitButton"/>
+            app:layout_constraintTop_toBottomOf="@id/gender_options"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/userDataViewText"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.6"
             android:layout_height="30dp"
             android:layout_margin="20dp"
             android:text="@string/view_existing_data"
             android:textColor="@color/SlateGray"
             android:textStyle="bold"
             android:textAlignment="center"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
             android:background="@drawable/view_data_button_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/submitButton"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizView"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -25,4 +25,5 @@
     <string name="update">Update</string>
     <string name="delete">Delete</string>
     <string name="my_app">APP</string>
+    <string name="user_id_text">User Id :</string>
 </resources>
